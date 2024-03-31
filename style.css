@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --facebook: #3b5999;
+  --telegram: #46c1f6;
+  --instagram: #e1306c;
+  --github: #333333;
+  --youtube: #de463b;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(221, 226, 236);
+}
+
+a {
+  position: relative;
+  margin: 0 10px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-color: white;
+  color: #1f1f1f;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 10px;
+  box-shadow: 0 10px 10px rgb(0, 0, 0, 0.15);
+  transform: background 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+a .icon {
+  transform: color 0.2s;
+}
+
+a:hover .icon,
+a:focus .icon {
+  color: white;
+}
+
+.tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 15px);
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 2px 12px 4px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.2s, bottom 0.2s cubic-bezier(0.64, 0.58, 0.91, 1.79);
+}
+
+a:hover .tooltip,
+a:focus .tooltip {
+  opacity: 1;
+  bottom: calc(100% + 15px);
+}
+
+.tooltip::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-width: 0;
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Facebook */
+a.facebook:hover .icon {
+  background-color: var(--facebook);
+}
+
+a.facebook .tooltip {
+  background-color: var(--facebook);
+}
+
+a.facebook .tooltip::after {
+  border-color: var(--facebook);
+}
+
+/* Telegram */
+a.telegram:hover .icon {
+  background-color: var(--telegram);
+}
+
+a.telegram .tooltip {
+  background-color: var(--telegram);
+}
+
+a.telegram .tooltip::after {
+  border-color: var(--telegram);
+}
+
+/* Instagram */
+a.instagram:hover .icon {
+  background-color: var(--instagram);
+}
+
+a.instagram .tooltip {
+  background-color: var(--instagram);
+}
+
+a.instagram .tooltip::after {
+  border-color: var(--instagram);
+}
+
+/* Youtube */
+a.youtube:hover .icon {
+  background-color: var(--youtube);
+}
+
+a.youtube .tooltip {
+  background-color: var(--youtube);
+}
+
+a.youtube .tooltip::after {
+  border-color: var(--youtube);
+}
+
+/* GitHub */
+a.github:hover .icon {
+  background-color: var(--github);
+}
+
+a.github .tooltip {
+  background-color: var(--github);
+}
+
+a.github .tooltip::after {
+  border-color: var(--github);
+}
